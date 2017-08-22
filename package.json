@@ -6,6 +6,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
     "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.5",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.1.0",
@@ -22,6 +23,8 @@
   "scripts": {
     "build": "webpack",
     "lint": "eslint src",
+    "exp-play": "cd ./dist && exp.js play",
+    "exp-deploy": "webpack && cd ./dist && exp.js deploy",
     "serve": "webpack-dev-server --open"
   },
   "dependencies": {
