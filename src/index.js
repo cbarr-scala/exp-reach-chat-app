@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 document.addEventListener('DOMContentLoaded', () => {
   document
     .getElementById('send-it-button')
@@ -24,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
           );
       });
     });
+
+  // test render some react
+  ReactDOM.render(
+    <h1>Hello, from react-dom</h1>,
+    document.getElementById('react-root'),
+  );
 });
 
 // eslint-disable-next-line no-unused-vars
