@@ -1,7 +1,6 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-
   document
     .getElementById('send-it-button')
     .addEventListener('click', () => {
