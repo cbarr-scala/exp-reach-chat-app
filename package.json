@@ -27,7 +27,5 @@
     "exp-deploy": "webpack && cd ./dist && exp.js deploy",
     "serve": "webpack-dev-server --open"
   },
-  "dependencies": {
-    "lodash": "^4.17.4"
-  }
+  "dependencies": {}
 }

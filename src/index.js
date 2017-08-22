@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
   document
     .getElementById('send-it-button')
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // eslint-disable-next-line no-unused-vars
 window.play = function play() {
   exp.getChannel('testChannel').listen('messageSent', (payload, respondCallback) => {
-
     const element = document.getElementById('what-was-sent-container');
 
     element.innerHTML = `${element.innerHTML}<p>${payload.submitter} says: ${payload.text}</p>`;
