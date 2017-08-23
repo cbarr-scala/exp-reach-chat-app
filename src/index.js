@@ -1,36 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import ChatPeepsList from './components/ChatPeepsList';
+
+import ChatAppBar from './components/ChatAppBar';
 
 document.addEventListener('DOMContentLoaded', () => {
-  document
-    .getElementById('send-it-button')
-    .addEventListener('click', () => {
-      exp.getCurrentDevice().then((device) => {
-        const location = device.document.location;
+  // document
+  //   .getElementById('send-it-button')
+  //   .addEventListener('click', () => {
+  //     exp.getCurrentDevice().then((device) => {
+  //       const location = device.document.location;
 
-        let locationName = location.name || 'Anon';
+  //       let locationName = location.name || 'Anon';
 
-        // chat app if having a zone, should only be in one zone, so we hard code to this
-        if (location.zones && location.zones.length > 0) {
-          locationName += ` - ${location.zones[0].name}`;
-        }
+  //       // chat app if having a zone, should only be in one zone, so we hard code to this
+  //       if (location.zones && location.zones.length > 0) {
+  //         locationName += ` - ${location.zones[0].name}`;
+  //       }
 
-        exp
-          .getChannel('testChannel')
-          .broadcast(
-            'messageSent',
-            {
-              text: document.getElementById('text-to-send-textbox').value,
-              submitter: locationName,
-            },
-            2000,
-          );
-      });
-    });
+  //       exp
+  //         .getChannel('testChannel')
+  //         .broadcast(
+  //           'messageSent',
+  //           {
+  //             text: document.getElementById('text-to-send-textbox').value,
+  //             submitter: locationName,
+  //           },
+  //           2000,
+  //         );
+  //     });
+  //   });
 
   // test render some react
+
   ReactDOM.render(
-    <h1>Hello, from react-dom</h1>,
+    <MuiThemeProvider>
+      <div>
+        <ChatAppBar />
+        <ChatPeepsList />
+      </div>
+    </MuiThemeProvider>,
     document.getElementById('react-root'),
   );
 });
