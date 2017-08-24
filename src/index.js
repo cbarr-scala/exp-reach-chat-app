@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import ChatPeepsList from './components/ChatPeepsList';
-
-import ChatAppBar from './components/ChatAppBar';
+import ChatApp from './components/ChatApp';
 
 document.addEventListener('DOMContentLoaded', () => {
   // document
@@ -36,17 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // test render some react
 
   ReactDOM.render(
-    <MuiThemeProvider>
-      <div>
-        <ChatAppBar />
-        <ChatPeepsList />
-      </div>
-    </MuiThemeProvider>,
+    <ChatApp />,
     document.getElementById('react-root'),
   );
 });
 
-// eslint-disable-next-line no-unused-vars
 window.play = function play() {
   exp.getChannel('testChannel').listen('messageSent', (payload, respondCallback) => {
     const element = document.getElementById('what-was-sent-container');

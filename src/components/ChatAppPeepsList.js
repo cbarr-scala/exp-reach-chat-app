@@ -36,11 +36,7 @@ class ChatPeepsList extends React.Component {
   constructor(props) {
     super(props);
 
-    const devices = [
-      { name: 'Chrome Device', nickname: 'C', id: 'chrome-device-01' },
-      { name: 'Safari Device', nickname: 'S', id: 'safari-device-01' },
-      { name: 'Android Device', nickname: 'D', id: 'android-device-01' }
-    ];
+    const devices = props.deviceList;
 
     const backgroundColorsPool = [
       red900,
@@ -64,7 +60,7 @@ class ChatPeepsList extends React.Component {
       blueGrey500,
       brown500,
       orange500,
-      deepOrange500
+      deepOrange500,
     ];
 
     const backgroundColorsInUse = [];
@@ -72,7 +68,7 @@ class ChatPeepsList extends React.Component {
     this.state = {
       devices,
       backgroundColorsPool,
-      backgroundColorsInUse
+      backgroundColorsInUse,
     };
 
     this.getRandomAvatarColor = this.getRandomAvatarColor.bind(this);
